@@ -1,18 +1,14 @@
 const Sequelize = require('sequelize')
-const mysql = require('mysql');
-const connection;
+
 
 require('dotenv').config();
 
-if (process.env.JAWSDB_URL){
-    connection= mysql.createConnection(process.env.JAWSDB_URL)
-}else{
-    connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '1darkness',
-        database: 'tech_blog'
-    })
-}
+const sequelize = process.env.JWSDB_URL
+? new Sequelize(process.env.JWSDB_URL)
+: new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
+    host: 'localhost',
+    dialect:'mysql',
+    port: 3306
+})
 
 module.exports = sequelize;
