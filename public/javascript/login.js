@@ -14,7 +14,7 @@ async function loginAccount(event) {
             headers: {'Content-Type': 'application/json'}
         })
         if(response.ok) {
-            document.location.replace('/')
+            document.location.replace('/dashboard/')
         }else{
             alert(response.statusText)
         }
@@ -40,7 +40,7 @@ async function signupForm(event) {
         })
 
         if(response.ok) {
-            document.location.replace('/dashboard')
+            document.location.replace('/dashboard/')
         }else {
             alert(response.statusText)
         }

@@ -22,7 +22,7 @@ router.get('/:id',(req,res)=> {
         include: [
             {
             model: Post,
-            attributes: ['id', 'title', 'created_at']
+            attributes: ['id', 'title','post_url', 'created_at']
             },
             {
                 model: Comment,
@@ -51,7 +51,7 @@ router.get('/:id',(req,res)=> {
     })
 })
 
-router.post('/', withAuth, (req,res)=> {
+router.post('/', (req,res)=> {
     User.create({
         username: req.body.username,
         email: req.body.email,

@@ -6,6 +6,7 @@ router.get('/', (req,res)=> {
     Post.findAll({
         attributes: [
             'id',
+            'post_url',
             'title',
             'created_at'
         ],
@@ -44,6 +45,7 @@ router.get('/post/:id',(req,res)=> {
         },
         attributes: [
             'id',
+            'post_url',
             'title',
             'created_at'
         ],
@@ -67,7 +69,7 @@ router.get('/post/:id',(req,res)=> {
             res.status(404).json({message: 'no post found'})
             return
         }
-        const posts = dbPostData.get({plain: true})
+        const post = dbPostData.get({plain: true})
 
         res.render('single-post', {
             post,

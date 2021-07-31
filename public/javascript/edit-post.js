@@ -15,10 +15,10 @@ async function editPost(event) {
         }
     })
     if(response.ok) {
-        document.location.replace('/dashboard')
+        document.location.replace('/dashboard/')
     }else{
         alert(response.statusText)
     }
 }
 
-document.querySelector('.edit-post').addEventListener('submit', editPost)
+document.querySelector('.edit-post-form').addEventListener('submit', editPost)

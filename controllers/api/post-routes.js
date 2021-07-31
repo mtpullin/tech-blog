@@ -2,12 +2,12 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection')
 const {Post, User, Comment} = require('../../models')
 const withAuth = require('../../utils/auth');
-const { post } = require('./comment-routes');
 
 router.get('/', (req,res)=> {
     Post.findAll({
         attributes: [
             'id',
+            'post_url',
             'title',
             'created_at',
         ],
@@ -40,6 +40,7 @@ router.get('/:id',(req,res)=> {
         },
         attributes: [
             'id',
+            'post_url',
             'title',
             'created_at'
         ],
@@ -75,7 +76,7 @@ router.post('/',withAuth, (req,res)=> {
     if(req.session){
         Post.create({
             title: req.body.title,
-            text: req.body.text,
+            post_url: req.body.post_url,
             user_id:req.session.user_id
         })
         .then(dbPostData => res.json(dbPostData))

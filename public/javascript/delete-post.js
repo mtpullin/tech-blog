@@ -9,7 +9,7 @@ async function deletePost(event) {
         method: 'DELETE'
     })
     if(response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/dashboard/');
     }else{ 
         alert(response.statusText)
     }

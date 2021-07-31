@@ -7,8 +7,8 @@
             <input type="text" id="post-title" name="post-title"/>
         </div>
         <div>
-            <label for="post-text">article</label>
-            <input type="text" id="post-text" />
+            <label for="post-url">Link</label>
+            <input id="post-url" name="post-url" />
         </div>
         <button type="submit" class="btn">Create</button>
     </form>
@@ -18,7 +18,7 @@
 <section>
     <h2>Your Articles</h2>
     <ol>
-        {{#each posts as || posts}}
+        {{#each posts as |post|}}
         <li>
             {{> post-info post}}
             <a href="/dashboard/edit/{{post.id}}" class="edit-link"> Edit post</a>
