@@ -22,8 +22,8 @@
   MIT 
   ![badge](https://img.shields.io/badge/license-MIT-red)
   
-  ## Tests
-  undefined
+ ![image](https://user-images.githubusercontent.com/82049270/127781444-89fcda43-db2c-4508-ab42-b49b791a89a1.png)
+
 
   ## Usage
    
